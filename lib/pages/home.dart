@@ -25,7 +25,7 @@ class HomeScreen extends StatelessWidget {
             const SizedBox(height: 24),
             ElevatedButton(
                 onPressed: () {
-                  Get.to(OtherScreen());
+                  Get.to(() => OtherScreen());
                 },
                 child: const Text('Open Other Screen'))
           ],

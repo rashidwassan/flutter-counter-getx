@@ -11,16 +11,17 @@ class OtherScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(),
       body: Center(
           child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          const Text('Number of Taps'),
-          // using the instance of controller to acces count's value
-          Text(_counterController.count.value.toString()),
-          // adding a bit of spacing (vertical)
-          const SizedBox(height: 24),
+          ElevatedButton(
+              onPressed: () {
+                _counterController.increment();
+              },
+              child: const Text('Increment Counter')),
           ElevatedButton(
               onPressed: () {
                 // getting back to previous screen
