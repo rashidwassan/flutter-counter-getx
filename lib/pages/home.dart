@@ -12,15 +12,14 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(title: const Text("Counter")),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const Text('Number of Taps'),
             // using the instance of controller to acces count's value
-            Text(_counterController.count.value.toString()),
+            Obx(() => Text("Clicks: ${_counterController.count}")),
             // adding a bit of spacing (vertical)
             const SizedBox(height: 24),
             ElevatedButton(
